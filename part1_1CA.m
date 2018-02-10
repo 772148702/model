@@ -1,78 +1,78 @@
-%AZ数据统计
+%CA数据统计
 data=xlsread('ProblemCData.xlsx');
 num=data(:,2);
 for i=1:50
     year(i)=1959+i;
 end
 %航空汽油总消费量，AVTCB
-oilplane=num(3282-1:3331-1);
+oilplane=num(3282-1+50:3331-1+50);
 
 %总生物量，BMTCB
-creature=num(4721:4770);
+creature=num(4721+50:4770+50);
 %煤炭总消费量，CLTCB
-coal=num(11881:11930);
+coal=num(11881+50:11930+50);
 %馏分燃料油总消费量，DFTCB
-oilniu=num(17761:17810);
+oilniu=num(17761+50:17810+50);
 %燃料乙醇，除去变性剂，EMTCB
-yichun=num(23441:23490);
+yichun=num(23441+50:23490+50);
 %化石燃料，FFTCB
-huashi=num(29441:29490);
+huashi=num(29441+50:29490+50);
 
 %地热能，GETCB
-dire=num(33093:33142);
+dire=num(33093+50:33142+50);
 
 %水电，HYTCB
-water=num(35173:35222);
+water=num(35173+50:35222+50);
 
 %喷气燃料，JFTCB
-jat=num(36853:36902);
+jat=num(36853+50:36902+50);
 
 %石脑油型喷气燃料总消耗量，JNTCB
-oiljat=num(39493:39542);
+oiljat=num(39493+50:39542+50);
 %煤油，KSTCB
-meiyou=num(42053:42102);
+meiyou=num(42053+50:42102+50);
 %液化石油气，LGTCB
-yehuaoil=num(46693:46742);
+yehuaoil=num(46693+50:46742+50);
 %电力系统能量损失，LOTCB
-loste=num(48933:48982);
+loste=num(48933+50:48982+50);
 %润滑油，LUTCB
-runhua=num(50773:50822);
+runhua=num(50773+50:50822+50);
 
 %车用汽油，MGTCB
-oilcar=num(54773:54822);
+oilcar=num(54773+50:54822+50);
 %工业部门消耗的杂项石油产品。MSICB
-zhaxiang=num(56413:56462);
+zhaxiang=num(56413+50:56462+50);
 %工业部门消耗的天然汽油。NAICB
-tianranqiyou=num(57133:57182);
+tianranqiyou=num(57133+50:57182+50);
 %天然气总消费量（包括补充气体燃料）。NGTCB
-tianranqi1=num(63053:63102);
+tianranqi1=num(63053+50:63102+50);
 %天然气总消费量（不包括补充气体燃料）。NNTCB
-tianranqi2=num(66293:66342);
+tianranqi2=num(66293+50:66342+50);
 %核电生产的电力。NUETB
-hedian=num(67213:67262);
+hedian=num(67213+50:67262+50);
 %沥青和道路石油、航空汽油、煤油、润滑油和“其他石油产品”的总消费量。P1TCB
-oiltot=num(68654-1:68703-1);
+oiltot=num(68654-1+50:68703-1+50);
 %石油产品总消费量。PATCB
-oilpro=num(74254-1:74303-1);
+oilpro=num(74254-1+50:74303-1+50);
 
 %石油焦总消费量。PCTCB
-oiljiao=num(78213:78262);
+oiljiao=num(78213+50:78262+50);
 %可再生能源总消费。RETCB
-reborn=num(84533:84582);
+reborn=num(84533+50:84582+50);
 %剩余燃料油总消耗量。RFTCB
-shenyuoil=num(87933:87982);
+shenyuoil=num(87933+50:87982+50);
 %燃料乙醇以外的可再生能源生产。ROPRB
-rebornyichun=num(89373:89422);
+rebornyichun=num(89373+50:89422+50);
 %补充气体燃料的总消耗量。SFTCB    30年
-buchongqiti=num(90053:90083);
+buchongqiti=num(90053+30:90083+30);
 %光伏与太阳能热能总消耗。SOTCB
-sun=num(91893:91942);
+sun=num(91893+50:91942+50);
 %能源消费总量。TETCB
-total=num(95253:95302);
+total=num(95253+50:95302+50);
 %一次能源和电力消费总量。TNSCB  40年
-onetotal=num(97585:97624);
+onetotal=num(97585+40:97624+40);
 %风能WYTCB
-wind=num(105545:105594);
+wind=num(105545+50:105594+50);
 
 hold on
 plot(year,oiltot,'g');
@@ -87,13 +87,13 @@ legend('石油','生物能','煤炭','地热能','水能','太阳能','天然气','风能');
 hold off
 
 %写入excel表格
-AZ(:,1)=year;
-AZ(:,2)=oiltot;
-AZ(:,3)=creature;
-AZ(:,4)=coal;
-AZ(:,5)=dire;
-AZ(:,6)=water;
-AZ(:,7)=sun;
-AZ(:,8)=tianranqi1;
-AZ(:,9)=wind;
-xlswrite('Energy.xlsx',AZ,'AZ');
+CA(:,1)=year;
+CA(:,2)=oiltot;
+CA(:,3)=creature;
+CA(:,4)=coal;
+CA(:,5)=dire;
+CA(:,6)=water;
+CA(:,7)=sun;
+CA(:,8)=tianranqi1;
+CA(:,9)=wind;
+xlswrite('Energy.xlsx',CA,'CA');
